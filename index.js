@@ -2,6 +2,7 @@ require('dotenv').config();
 const http = require('http');
 const express = require('express');
 const cors = require('cors');
+const blogsRouter = require('./controllers/blogs');
 const config = require('./utils/config');
 const logger = require('./utils/logger');
 const app = express();
@@ -29,5 +30,5 @@ app.post('/api/blogs', (request, response) => {
 });
 
 app.listen(config.PORT, () => {
-  logger.info(`Server running on port ${config.PORT}`);
+  logger.info(`[INFO]: Server running on port ${config.PORT}`);
 });

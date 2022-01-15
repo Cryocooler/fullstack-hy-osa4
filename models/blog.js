@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
 const config = require('../utils/config');
+const logger = require('../utils/logger');
 // const validator = require('mongoose-unique-validator')
 
-console.log('connecting to', config.MONGODB_URI);
+logger.info('[INFO]: connecting to', config.MONGODB_URI);
 
 mongoose.connect(config.MONGODB_URI)
   .then((res) => {
-    console.log('Connected to MongoDB');
+    logger.info('[INFO]: Connected to MongoDB');
   })
   .catch((error) => {
-    console.log('Error connecting to MongoDB');
+    logger.error('[ERROR]: Error connecting to MongoDB');
   });
 
 const blogSchema = new mongoose.Schema({
