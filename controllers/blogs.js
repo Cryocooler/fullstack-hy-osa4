@@ -8,8 +8,11 @@ blogsRouter.get('/', (req, response) => {
 });
 
 blogsRouter.post('/', (req, response, next) => {
-  const blog = new Blog(req.body);
-  blog.blog()
+  const body = req.body;
+
+  const blog = new Blog(body);
+
+  blog.save()
     .then((result) => {
       response.status(201).json(result);
     });
