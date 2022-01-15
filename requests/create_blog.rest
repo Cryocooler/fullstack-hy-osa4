@@ -4,8 +4,8 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "Daily life in data science",
-    "author": "NeuralNetwork123",
-    "url": "http://www.variance.ee/",
+    "title": "Crypto 101",
+    "author": "NeuralNetwork1234",
+    "url": "http://www.cryptoinvest.ee/",
     "likes": 10
 }
