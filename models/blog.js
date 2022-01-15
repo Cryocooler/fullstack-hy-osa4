@@ -3,16 +3,6 @@ const config = require('../utils/config');
 const logger = require('../utils/logger');
 // const validator = require('mongoose-unique-validator')
 
-logger.info('[INFO]: connecting to', config.MONGODB_URI);
-
-mongoose.connect(config.MONGODB_URI)
-  .then((res) => {
-    logger.info('[INFO]: Connected to MongoDB');
-  })
-  .catch((error) => {
-    logger.error('[ERROR]: Error connecting to MongoDB');
-  });
-
 const blogSchema = new mongoose.Schema({
   title: String,
   author: String,
