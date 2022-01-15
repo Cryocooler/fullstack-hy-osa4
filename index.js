@@ -1,30 +1,9 @@
+require('dotenv').config()
 const http = require('http')
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const mongoose = require('mongoose')
-
-
-
-
-const blogSchema = new mongoose.Schema({
-  title: String,
-  author: String,
-  url: String,
-  likes: Number
-})
-
-const Blog = mongoose.model('Blog', blogSchema)
-
-const mongoUrl = 'mongodb://sahin:laplace822@cluster0-shard-00-00.6ikye.mongodb.net:27017,cluster0-shard-00-01.6ikye.mongodb.net:27017,cluster0-shard-00-02.6ikye.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-13m5bq-shard-0&authSource=admin&retryWrites=true&w=majority'
-
-mongoose.connect(mongoUrl)
-  .then(res => {console.log('Connected to MongoDB')
-})
-  .catch(error => {
-    console.log('Error connecting to MongoDB')
-  })
-
+const Blog = require('./models/blog')
 app.use(cors())
 app.use(express.json())
 
@@ -46,7 +25,7 @@ app.post('/api/blogs', (request, response) => {
     })
 })
 
-const PORT = 3003
+const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
