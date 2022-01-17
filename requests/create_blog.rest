@@ -4,8 +4,8 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "Crypto 101",
-    "author": "NeuralNetwork1234",
+    "title": "Crypto 1131301",
+    "author": "NeuralNetwork123334",
     "url": "http://www.cryptoinvest.ee/",
     "likes": 10
 }

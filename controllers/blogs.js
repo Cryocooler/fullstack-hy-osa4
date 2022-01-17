@@ -8,7 +8,7 @@ blogsRouter.get('/', (req, response) => {
 });
 
 blogsRouter.post('/', (req, response, next) => {
-  const body = req.body;
+  const { body } = req;
 
   const blog = new Blog(body);
 
